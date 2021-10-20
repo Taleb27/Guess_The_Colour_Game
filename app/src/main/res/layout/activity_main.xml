@@ -20,17 +20,11 @@
         android:layout_height="50dp"
         android:layout_weight="0"
         android:autofillHints=""
+        android:layout_gravity="center"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name" />
 
-    <Button
-        android:id="@+id/buttonlogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="login"
-        android:text="Button"
-        />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -39,5 +33,14 @@
         android:layout_weight="0"
         android:autofillHints=""
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:gravity="center"/>
+    <Button
+        android:id="@+id/buttonlogin"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:onClick="login"
+        android:text="Button" />
+
 </LinearLayout>
