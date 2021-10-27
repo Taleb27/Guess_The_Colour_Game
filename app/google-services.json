@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1035306879019",
+    "project_id": "guess-the-colour-c44bb",
+    "storage_bucket": "guess-the-colour-c44bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1035306879019:android:7fd7d41adf372818d6026e",
+        "android_client_info": {
+          "package_name": "y2020.aoc.bayan.taleb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1035306879019-va233vp0if40ulppabdi8kcu0e6n6203.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgAqaiXSdTVEc_blLlAPjfypXMkyaW-WA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1035306879019-va233vp0if40ulppabdi8kcu0e6n6203.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
