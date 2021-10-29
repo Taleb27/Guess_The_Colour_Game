@@ -1,5 +1,6 @@
 package y2020.aoc.bayan.taleb;
 
+import android.app.Notification;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -21,11 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Sign_Activity extends AppCompatActivity implements View.OnLongClickListener {
 private FirebaseAuth mAuth;
-    EditText firstName;
-    EditText lastName;
-    EditText address;
-    EditText email;
-    Button register;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,9 +69,9 @@ private FirebaseAuth mAuth;
 
     }
     public void submit(View view){
-        signup(editTextName.getText().toString(),editTextPassword.getText().toString());
+        signup(.getText().toString(),editTextPassword.getText().toString());
     }
-    public void signup(String email,String password){
+    public void login(String email,String password){
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -83,7 +80,7 @@ private FirebaseAuth mAuth;
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Intent i  = new Intent(MainActivity.this,WelcomeActivity.this);
+                            Intent i = new Intent(MainActivity.this, Sign_Activity.class);
                             startActivity(i);
 
                         } else {
@@ -91,12 +88,14 @@ private FirebaseAuth mAuth;
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
                             Toast.makeText(MainActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
+
                         }
 
-                        //
+                        // ...
                     }
-
-
                 });
     }
+
+
+
 }
