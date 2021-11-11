@@ -21,18 +21,12 @@
         android:textSize="36dp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/buttonback"
 
-        android:layout_width="match_parent"
-        android:layout_height="68dp"
-
-        android:text="Back" />
     <Button
         android:id="@+id/camera"
 
         android:layout_width="match_parent"
         android:layout_height="68dp"
-
+      android:onClick="camera"
         android:text="camera"/>
 </LinearLayout>

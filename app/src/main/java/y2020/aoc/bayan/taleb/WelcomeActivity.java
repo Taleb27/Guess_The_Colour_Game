@@ -2,10 +2,16 @@ package y2020.aoc.bayan.taleb;
 
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,19 +19,39 @@ public class WelcomeActivity extends AppCompatActivity implements DialogInterfac
 
     private TextView TextViewWelcom;
         private Button buttonback;
-        private Button buttoncamera;
+        private Button camera;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_welcome);
-            buttoncamera = findViewById(R.id.buttonCamera)
+            camera=findViewById(R.id.buttonCamera);
             TextViewWelcom = findViewById(R.id.TextViewWelcome);
-            buttonback = findViewById(R.id.buttonback);
+
             String name = getIntent().getStringExtra("name");
             TextViewWelcom.setText("welcome"+name);
 
+        }@Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                Toast.makeText(this, "settings", Toast.LENGTH_LONG).show();
+                break;
+            case R.id.extmenu:
+
+                break;
         }
+        return super.onOptionsItemSelected(item);
+
+    }
+
 
     @Override
     public void onBackPressed() {
@@ -52,5 +78,12 @@ public class WelcomeActivity extends AppCompatActivity implements DialogInterfac
         }
 
     }
+
+    public void camera(View view) {
+        Intent intent =new Intent(this,ProfileActivity.class);
+        startActivity(intent);
+    }
+
+
 }
 

@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.taleb.WelcomeActivity"
+    >
 
     <item
-        android:id="@+id/setmenu"
-        android:title="settings" />
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="settings"
+        app:showAsAction="never" />
     <item
         android:id="@+id/extmenu"
-        android:title="exit" />
+        android:orderInCategory="100"
+        android:title="Exit"
+        app:showAsAction="never" />
+
 </menu>

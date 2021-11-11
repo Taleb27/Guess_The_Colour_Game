@@ -34,7 +34,7 @@ public class Sign_Activity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_sign_);
         mAuth = FirebaseAuth.getInstance();
             editTextEmail = findViewById(R.id.textEmail);
-            editTextPassword = findViewById(R.id.editTextPassword);
+            editTextPassword = findViewById(R.id.textPass);
             editTextUsername = findViewById(R.id.textUsername);
             signUpButton = findViewById(R.id.ButtonSign);
             signUpButton.setOnClickListener(this);
@@ -48,6 +48,7 @@ public class Sign_Activity extends AppCompatActivity implements View.OnClickList
             }
 
     }
+
 
     boolean isEmail(EditText text) {
         CharSequence email = text.getText().toString();
@@ -98,5 +99,12 @@ public class Sign_Activity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         signup(editTextEmail.getText().toString(), editTextPassword.getText().toString());
+        welcomeActivity();
     }
+
+    private void welcomeActivity() {
+        Intent intent= new Intent(Sign_Activity.this, WelcomeActivity.class);
+        startActivity(intent);
+    }
+
 }

@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     private Button buttonlogin,buttonsignup;
     private EditText editTextemail, editTetPassword;
     private FirebaseAuth mAuth;
+    public String email,pass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
 
         SharedPreferences Settings = getSharedPreferences("Settings",MODE_PRIVATE);
-        String email = Settings.getString("editTextName", "");
+        String email = Settings.getString("editTextemail", "");
         String password = Settings.getString("editTetPassword", "");
         if(!email.equals("")&& !password.equals("")){
             editTextemail.setText(email);
@@ -52,6 +53,9 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
 
     public void login(View view) {
+        email=editTextemail.getText().toString();
+        pass=editTetPassword.getText().toString();
+
 
         if (!editTextemail.getText().toString().equals("")) {
             //create sp file
