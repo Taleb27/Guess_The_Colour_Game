@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
     private static final String TAG = "FIREBASE";
     private Button buttonlogin,buttonsignup;
-    private EditText editTextName, editTetPassword;
+    private EditText editTextemail, editTetPassword;
     private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         setContentView(R.layout.activity_main);
         // Initialize Firebase Auth(return refrence to the instance of the project firebase
         mAuth = FirebaseAuth.getInstance();
-        editTextName = findViewById(R.id.editTextName);
+        editTextemail = findViewById(R.id.editTextEmail);
         editTetPassword = findViewById(R.id.editTextPassword);
         buttonlogin = findViewById(R.id.buttonlogin);
         //sets the required button to response to long click
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         String email = Settings.getString("editTextName", "");
         String password = Settings.getString("editTetPassword", "");
         if(!email.equals("")&& !password.equals("")){
-            editTextName.setText(email);
+            editTextemail.setText(email);
             editTetPassword.setText(password);
         }
 
@@ -53,20 +53,20 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
     public void login(View view) {
 
-        if (!editTextName.getText().toString().equals("")) {
+        if (!editTextemail.getText().toString().equals("")) {
             //create sp file
             SharedPreferences Settings = getSharedPreferences("settings",MODE_PRIVATE);
             // open editor for edititng
             SharedPreferences.Editor editor= Settings.edit();
            //write the wanted settings
-            editor.putString("editTextName",editTextName.getText().toString());
-            editor.putString("editTextPassword",editTextName.getText().toString());
+            editor.putString("editTextName",editTextemail.getText().toString());
+            editor.putString("editTextPassword",editTextemail.getText().toString());
            //save and close file
             editor.commit();
 
            // intent.putExtra("name",editTextName.getText().toString());
 
-            login(editTextName.getText().toString(),editTetPassword.getText().toString());
+            login(editTextemail.getText().toString(),editTetPassword.getText().toString());
 
 
 
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
 
     @Override
     public boolean onLongClick(View v) {
-        editTextName.setText("");
+        editTextemail.setText("");
 
         editTetPassword.setText("");
         return true;

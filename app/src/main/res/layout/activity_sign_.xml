@@ -19,18 +19,7 @@
         android:autofillHints=""
         android:ems="10"
         android:hint="Username"
-        android:text="Username" />
-
-    <EditText
-        android:id="@+id/textPass"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:ems="10"
-
-        android:inputType="textPassword"
-        android:layout_margin="20dp"
-        android:hint="password"
-      />
+       />
 
     <EditText
         android:id="@+id/textEmail"
@@ -40,7 +29,16 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         android:hint="email"/>
+    <EditText
+        android:id="@+id/textPass"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:ems="10"
 
+        android:inputType="textPassword"
+        android:layout_margin="20dp"
+        android:hint="password"
+        />
     <Button
         android:id="@+id/ButtonSign"
         android:layout_width="wrap_content"

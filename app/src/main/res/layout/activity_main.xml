@@ -6,11 +6,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
+    android:background="@drawable/d274507"
+    android:layout_gravity="center"
     >
 
 
     <EditText
-       android:id="@+id/editTextName"
+       android:id="@+id/editTextEmail"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
@@ -18,8 +20,9 @@
         android:autofillHints=""
         android:ems="10"
         android:gravity="center"
-        android:inputType="textPersonName"
-        android:text="Username" />
+        android:inputType="textEmailAddress"
+        android:hint="email"
+       />
 
 
     <EditText
@@ -34,7 +37,8 @@
         android:layout_gravity="center"
         android:layout_margin="45dp"
         android:gravity="center"
-        android:text="password"/>
+        android:hint="Password"
+      />
 
 
     <Button
@@ -44,7 +48,7 @@
         android:layout_gravity="center"
         android:layout_margin="30dp"
         android:onClick="login"
-        android:text="Button"
+        android:text="login"
         tools:text="Login" />
 
     <Button
@@ -54,7 +58,7 @@
         android:layout_gravity="center"
         android:layout_margin="30dp"
         android:onClick="sign"
-        android:text="Button"
+        android:text="sign up"
         tools:text="Sign up" />
 
 

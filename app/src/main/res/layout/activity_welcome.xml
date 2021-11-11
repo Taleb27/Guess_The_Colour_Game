@@ -7,13 +7,13 @@
     android:hapticFeedbackEnabled="false"
     android:orientation="vertical"
     tools:context=".WelcomeActivity"
-    android:background="@drawable/d274507">
+    android:background="@drawable/d274507"
+    android:gravity="center">
 
 
     <TextView
         android:id="@+id/TextViewWelcome"
         android:layout_width="match_parent"
-
         android:layout_height="75dp"
         android:allowUndo="true"
         android:gravity="center"
@@ -28,6 +28,11 @@
         android:layout_height="68dp"
 
         android:text="Back" />
+    <Button
+        android:id="@+id/camera"
 
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
 
+        android:text="camera"/>
 </LinearLayout>

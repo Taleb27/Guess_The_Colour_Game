@@ -11,13 +11,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class WelcomeActivity extends AppCompatActivity implements DialogInterface.OnClickListener {
 
-        TextView TextViewWelcom;
-        Button buttonback;
+    private TextView TextViewWelcom;
+        private Button buttonback;
+        private Button buttoncamera;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_welcome);
-
+            buttoncamera = findViewById(R.id.buttonCamera)
             TextViewWelcom = findViewById(R.id.TextViewWelcome);
             buttonback = findViewById(R.id.buttonback);
             String name = getIntent().getStringExtra("name");
