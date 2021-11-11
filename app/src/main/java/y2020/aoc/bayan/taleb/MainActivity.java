@@ -18,10 +18,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity<email, password> extends AppCompatActivity implements View.OnLongClickListener  {
+public class MainActivity extends AppCompatActivity implements View.OnLongClickListener {
 
     private static final String TAG = "FIREBASE";
-    private Button buttonlogin;
+    private Button buttonlogin,buttonsignup;
     private EditText editTextName, editTetPassword;
     private FirebaseAuth mAuth;
     @Override
@@ -35,6 +35,9 @@ public class MainActivity<email, password> extends AppCompatActivity implements 
         buttonlogin = findViewById(R.id.buttonlogin);
         //sets the required button to response to long click
         buttonlogin.setOnLongClickListener(this);
+
+
+
 
         SharedPreferences Settings = getSharedPreferences("Settings",MODE_PRIVATE);
         String email = Settings.getString("editTextName", "");
@@ -86,7 +89,7 @@ public class MainActivity<email, password> extends AppCompatActivity implements 
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Intent i = new Intent(MainActivity.this, Sign_Activity.class);
+                            Intent i = new Intent(MainActivity.this, WelcomeActivity.class);
                             startActivity(i);
 
                         } else {
@@ -103,5 +106,8 @@ public class MainActivity<email, password> extends AppCompatActivity implements 
     }
 
 
-
+    public void sign(View view) {
+        Intent i = new Intent(MainActivity.this, Sign_Activity.class);
+        startActivity(i);
+    }
 }

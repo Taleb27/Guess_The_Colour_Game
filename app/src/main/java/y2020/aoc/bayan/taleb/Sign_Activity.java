@@ -1,7 +1,8 @@
 package y2020.aoc.bayan.taleb;
 
-import android.app.Notification;
+
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -20,27 +21,32 @@ import com.google.firebase.auth.FirebaseUser;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Sign_Activity extends AppCompatActivity implements View.OnLongClickListener {
-private FirebaseAuth mAuth;
-
-
+public class Sign_Activity extends AppCompatActivity implements View.OnClickListener {
+    private static final String TAG = "FIREBASE";
+    private FirebaseAuth mAuth;
+    private EditText editTextPassword;
+    private EditText editTextEmail;
+    private Button signUpButton;
+    private EditText editTextUsername;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-     mAuth = FirebaseAuth.getInstance()
-   /*     firstName = findViewById(R.id.firstName);
-        lastName = findViewById(R.id.lastName);
-        address = findViewById(R.id.address);
-        email = findViewById(R.id.email);
-        register = findViewById(R.id.register);
-*/
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                checkDataEntered();
+        setContentView(R.layout.activity_sign_);
+        mAuth = FirebaseAuth.getInstance();
+            editTextEmail = findViewById(R.id.textEmail);
+            editTextPassword = findViewById(R.id.editTextPassword);
+            editTextUsername = findViewById(R.id.textUsername);
+            signUpButton = findViewById(R.id.ButtonSign);
+            signUpButton.setOnClickListener(this);
+            SharedPreferences sp= getSharedPreferences("setting",MODE_PRIVATE);
+            String email = sp.getString("email", "");
+            String password =sp.getString("password","");
+            if (!email.equals("")&& !password.equals("")){
+                editTextEmail.setText(email);
+                editTextPassword.setText(password);
+
             }
-        });
+
     }
 
     boolean isEmail(EditText text) {
@@ -54,24 +60,18 @@ private FirebaseAuth mAuth;
     }
 
     void checkDataEntered() {
-        if (isEmpty(firstName)) {
-            Toast t = Toast.makeText(this, "You must enter first name to register!", Toast.LENGTH_SHORT);
+        if (isEmpty(editTextUsername)) {
+            Toast t = Toast.makeText(this, "You must enter Username to register!", Toast.LENGTH_SHORT);
             t.show();
         }
-
-        if (isEmpty(lastName)) {
-            lastName.setError("Last name is required!");
-        }
-
-        if (isEmail(email) == false) {
-            email.setError("Enter valid email!");
+        if (isEmail(editTextEmail) == false) {
+            editTextEmail.setError("Enter valid email!");
         }
 
     }
-    public void submit(View view){
-        signup(.getText().toString(),editTextPassword.getText().toString());
-    }
-    public void login(String email,String password){
+
+
+    public void signup(String email, String password) {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -80,15 +80,14 @@ private FirebaseAuth mAuth;
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Intent i = new Intent(MainActivity.this, Sign_Activity.class);
+                            Intent i = new Intent(Sign_Activity.this, WelcomeActivity.class);
                             startActivity(i);
 
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(MainActivity.this, "Authentication failed.",
+                            Toast.makeText(Sign_Activity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-
                         }
 
                         // ...
@@ -96,6 +95,8 @@ private FirebaseAuth mAuth;
                 });
     }
 
-
-
+    @Override
+    public void onClick(View v) {
+        signup(editTextEmail.getText().toString(), editTextPassword.getText().toString());
+    }
 }
