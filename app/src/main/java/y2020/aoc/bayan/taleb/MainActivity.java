@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     private EditText editTextemail, editTetPassword;
     private FirebaseAuth mAuth;
     public String email,pass;
+    private Intent musicIntent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,8 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         buttonlogin = findViewById(R.id.buttonlogin);
         //sets the required button to response to long click
         buttonlogin.setOnLongClickListener(this);
+        musicIntent = new Intent(this,MusicService.class);
+        startService(musicIntent);
 
 
 

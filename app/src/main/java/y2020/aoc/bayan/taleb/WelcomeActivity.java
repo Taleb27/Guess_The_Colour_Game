@@ -28,7 +28,7 @@ public class WelcomeActivity extends AppCompatActivity implements DialogInterfac
             TextViewWelcom = findViewById(R.id.TextViewWelcome);
 
             String name = getIntent().getStringExtra("name");
-            TextViewWelcom.setText("welcome"+name);
+            TextViewWelcom.setText("welcome");
 
         }@Override
     public boolean onCreateOptionsMenu(Menu menu) {
