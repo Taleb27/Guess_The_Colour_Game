@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/d274507"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/Btnguess"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_weight="0"
+        android:onClick="onClick"
+        android:text="StartGame1"
+        android:layout_margin="10dp"
+        />
+
+    <Button
+        android:id="@+id/BtnMath"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_weight="0"
+        android:onClick="onClick"
+        android:text="StartGame2"
+        android:layout_margin="10dp"
+        />
+
+    <Button
+        android:id="@+id/BtnSettings"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_weight="0"
+        android:onClick="onClick"
+        android:text="Settings"
+        android:layout_margin="10dp"
+        />
+
+    <Button
+        android:id="@+id/BtnAbout"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+
+        android:layout_weight="0"
+        android:onClick="onClick"
+        android:text="About" />
+
+    <Button
+        android:id="@+id/BtnExit"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:layout_weight="0"
+        android:onClick="onClick"
+        android:text="Exit" />
+</LinearLayout>
