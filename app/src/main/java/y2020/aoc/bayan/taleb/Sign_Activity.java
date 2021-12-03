@@ -103,7 +103,7 @@ public class Sign_Activity extends AppCompatActivity implements View.OnClickList
     }
 
     private void welcomeActivity() {
-        Intent intent= new Intent(Sign_Activity.this, WelcomeActivity.class);
+        Intent intent= new Intent(Sign_Activity.this, PageActivity.class);
         startActivity(intent);
     }
 

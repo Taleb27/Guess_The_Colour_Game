@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".AboutGameActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MathActivity"
+            android:exported="false" />
+        <activity
             android:name=".GuessActivity"
             android:exported="false" />
         <activity android:name=".ArrayListActivity" />
@@ -26,7 +35,9 @@
         <activity
             android:name=".WelcomeActivity"
             android:exported="true" />
-
+        <activity
+            android:name=".PageActivity"
+            android:exported="true"/>
         <service
             android:name=".MusicService"
             android:enabled="true"

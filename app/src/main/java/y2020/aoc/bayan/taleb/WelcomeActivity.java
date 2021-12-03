@@ -18,7 +18,6 @@ import androidx.appcompat.app.AppCompatActivity;
 public class WelcomeActivity extends AppCompatActivity implements DialogInterface.OnClickListener {
 
     private TextView TextViewWelcom;
-        private Button buttonback;
         private Button camera;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
