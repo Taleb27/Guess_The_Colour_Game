@@ -5,17 +5,22 @@
       <map>
         <entry key="..\:/Android/taleb2/app/src/main/res/layout/activity_Page.xml" value="0.19701086956521738" />
         <entry key="..\:/Android/taleb2/app/src/main/res/layout/activity_about.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android/taleb2/app/src/main/res/layout/activity_about_game.xml" value="0.1" />
         <entry key="..\:/Android/taleb2/app/src/main/res/layout/activity_array_list.xml" value="0.25" />
         <entry key="..\:/Android/taleb2/app/src/main/res/layout/activity_fragment.xml" value="0.20416666666666666" />
         <entry key="..\:/Android/taleb2/app/src/main/res/layout/activity_guess.xml" value="0.19701086956521738" />
         <entry key="..\:/Android/taleb2/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Android/taleb2/app/src/main/res/layout/activity_page.xml" value="0.10572916666666667" />
         <entry key="..\:/Android/taleb2/app/src/main/res/layout/activity_profile.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android/taleb2/app/src/main/res/layout/activity_setting.xml" value="0.19701086956521738" />
         <entry key="..\:/Android/taleb2/app/src/main/res/layout/activity_sign_.xml" value="0.25" />
         <entry key="..\:/Android/taleb2/app/src/main/res/layout/activity_start.xml" value="0.19010416666666666" />
         <entry key="..\:/Android/taleb2/app/src/main/res/layout/activity_welcome.xml" value="0.2" />
         <entry key="..\:/Android/taleb2/app/src/main/res/layout/item_raw.xml" value="0.20416666666666666" />
         <entry key="..\:/Android/taleb2/app/src/main/res/menu/menu.xml" value="0.33" />
+        <entry key="..\:/Android/taleb2/app/src/main/res/xml/fragmented_preferences.xml" value="0.1" />
+        <entry key="..\:/Android/taleb2/app/src/main/res/xml/fragmented_preferences_inner.xml" value="0.11496350364963503" />
+        <entry key="..\:/Android/taleb2/app/src/main/res/xml/preference_dependencies.xml" value="0.1" />
       </map>
     </option>
   </component>

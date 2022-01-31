@@ -17,6 +17,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity implements View.OnLongClickListener {
 
@@ -26,6 +28,8 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     private FirebaseAuth mAuth;
     public String email,pass;
     private Intent musicIntent;
+    private FirebaseAuth mafirebaseAuth= FirebaseAuth.getInstance();
+    private FirebaseDatabase database = FirebaseDatabase.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +54,12 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             editTextemail.setText(email);
             editTetPassword.setText(password);
         }
+        String UID= mafirebaseAuth.getUid();
+        // Write a message to the database
+        FirebaseDatabase database = FirebaseDatabase.getInstance("https://guess-the-colour-c44bb-default-rtdb.europe-west1.firebasedatabase.app/");
+        DatabaseReference myRef = database.getReference("users");
+        Item item = new Item("this is my first time", R.drawable.d274507,true,50);
+        myRef.push().setValue(item);
 
 
     }
